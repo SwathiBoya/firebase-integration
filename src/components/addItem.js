@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
-import { db } from '../config';
-
+import {db} from '../services/config';
 let itemsRef = db.ref('/items');
 let addItem = (item) => {
     db.ref('/items').push({
