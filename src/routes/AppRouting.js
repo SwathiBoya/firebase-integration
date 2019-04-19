@@ -4,11 +4,13 @@ import { createStackNavigator, createAppContainer} from 'react-navigation';
 import LandingPage from '../pages/LandingPage';
 import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
+import ProfilePage from '../pages/ProfilePage';
 
 const Route = createStackNavigator(
     {
         LoginPage:LoginPage,
-        SignupPage:SignupPage
+        SignupPage:SignupPage,
+        ProfilePage:ProfilePage
         
     },
     {

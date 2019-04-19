@@ -11,6 +11,7 @@ import {
     ToastAndroid 
 } from 'react-native';
 import { loginUser } from '../services/services';
+import Geolocation from './Geolocation';
 const Toast = (props) => {
     if (props.visible) {
       ToastAndroid.showWithGravityAndOffset(
@@ -44,7 +45,7 @@ export default class LoginComponent extends Component {
     login(){
         loginUser(this.state.user).then(result=>{
             this.setState({message:'User Logged Successfully',visible:true});
-            // this.props.navigation.navigate('ProfilePage');
+            this.props.navigation.navigate('ProfilePage');
         }).catch(err=>{
             this.setState({message:err.message,visible:true});
         });
@@ -88,6 +89,7 @@ export default class LoginComponent extends Component {
                 onPress={() => this.props.navigation.navigate('SignupPage')}>
                     <Text style={styles.signUpText}>SignUP</Text>
                 </TouchableHighlight>
+                <Geolocation/>
                 <Toast visible={this.state.visible} message={this.state.message} />
             </View>
         );
